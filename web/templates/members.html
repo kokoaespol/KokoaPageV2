@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- One -->
+<section id="One" class="wrapper style3">
+    <div class="inner">
+        <header class="align-center">
+            <p>Eleifend vitae urna</p>
+            <h2>Miembros</h2>
+        </header>
+    </div>
+</section>
+
+<!-- Two -->
+
+
+<section class="wrapper style2">
+    <div class="inner">
+        <div class="grid-style">
+
+            {% for member in members %}
+                <div>
+                    <div class="box">
+                        <div class="image fit">
+                            <img src="{{ member.image.url }}" alt="">
+                        </div>
+                        <div class="content">
+                            <header class="align-center">
+                                <p>{{ member.major }} - {{ member.join_year }}</p>
+                                <h2>{{ member.name }}</h2>
+                            </header>
+                            {% comment %} <p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet
+                                tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus,
+                                quis volutpat lacus placerat malesuada.</p>
+                            <footer class="align-center">
+                                <a href="#" class="button alt">Learn More</a>
+                            </footer> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

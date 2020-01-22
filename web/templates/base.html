@@ -18,17 +18,26 @@
 <body>
 
     <!-- Header -->
-    <header id="header" class="alt">
-        <div class="logo"><a href="index.html">Kokoa</a></div>
-        <a href="#menu">Men&uacute;</a>
-    </header>
+    {% if is_sub %}
+        <header id="header">
+            <div class="logo"><a href="index.html">Kokoa</a></div>
+            <a href="#menu">Men&uacute;</a>
+        </header>
+    {% else %}
+        <header id="header" class="alt">
+            <div class="logo"><a href="index.html">Kokoa</a></div>
+            <a href="#menu">Men&uacute;</a>
+        </header>
+    {% endif %}
 
     <!-- Nav -->
     <nav id="menu">
         <ul class="links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="generic.html">¿Quienes somos?</a></li>
-            <li><a href="elements.html">Cont&aacute;ctanos</a></li>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'projects' %}">Proyectos</a></li>
+            <li><a href="{% url 'members' %}">Miembros</a></li>
+            <li><a href="{% url 'about' %}">¿Quienes somos?</a></li>
+            <li><a href="{% url 'contact' %}">Cont&aacute;ctanos</a></li>
         </ul>
     </nav>
 
