@@ -20,12 +20,12 @@
     <!-- Header -->
     {% if is_sub %}
         <header id="header">
-            <div class="logo"><a href="index.html">Kokoa</a></div>
+            <div class="logo"><a href="{% url 'home' %}">Kokoa</a></div>
             <a href="#menu">Men&uacute;</a>
         </header>
     {% else %}
         <header id="header" class="alt">
-            <div class="logo"><a href="index.html">Kokoa</a></div>
+            <div class="logo"><a href="{% url 'home' %}">Kokoa</a></div>
             <a href="#menu">Men&uacute;</a>
         </header>
     {% endif %}
