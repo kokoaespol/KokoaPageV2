@@ -1,96 +1,117 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% load static %}
 
-<!-- One -->
-<section id="One" class="wrapper style3">
-    <div class="inner">
-        <header class="align-center">
-            <p>Eleifend vitae urna</p>
-            <h2>Contacto</h2>
-        </header>
+
+{% block content %}
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Contacto</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<!-- ================ contact section start ================= -->
+<section class="contact-section">
+    <div class="container">
+        <div class="d-none d-sm-block mb-5 pb-4">
+            <div id="map" style="height: 480px; position: relative; overflow: hidden;"></div>
+            <script>
+                function initMap() {
+                    const location = new google.maps.LatLng(-2.1453503,-79.9659433);
+                    const map = new google.maps.Map(document.getElementById('map'), {
+                        center: location,
+                        zoom: 19,
+                        scrollwheel: false,
+                    });
+                    const marker = new google.maps.Marker({
+                        position: location,
+                        map: map,
+                        title: 'KOKOA'
+                    });
+                }
+            </script>
+            <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnjIi2KKwlmW7WRlUkR_mQwPLYU-7BmjA&callback=initMap">
+                </script>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <h2 class="contact-title">Get in Touch</h2>
+            </div>
+            <div class="col-lg-8">
+                <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
+                    novalidate="novalidate">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
+                                    placeholder=" Name"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input class="form-control valid" name="name" id="name" type="text"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
+                                    placeholder="Enter your name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input class="form-control valid" name="email" id="email" type="email"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
+                                    placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input class="form-control" name="subject" id="subject" type="text"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
+                                    placeholder="Enter Subject">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 offset-lg-1">
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="ti-home"></i></span>
+                    <div class="media-body">
+                        <h3>Buttonwood, California.</h3>
+                        <p>Rosemead, CA 91770</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                    <div class="media-body">
+                        <h3>+1 253 565 2365</h3>
+                        <p>Mon to Fri 9am to 6pm</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="ti-email"></i></span>
+                    <div class="media-body">
+                        <h3>support@colorlib.com</h3>
+                        <p>Send us your query anytime!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
-
-
-
-<div id="main" class="container">
-    <div class="row 200%">
-        <div class="4u 12u(medium)">
-
-            <form method="post" action="#">
-                <div class="row uniform">
-
-                    <div class="6u 12u$(xsmall)">
-                        <input type="text" name="name" id="name" value="" placeholder="Nombre">
-                    </div>
-                    <div class="6u$ 12u$(xsmall)">
-                        <input type="text" name="surname" id="surname" value="" placeholder="Apellido">
-                    </div>
-
-                    <div class="6u 12u$(xsmall)">
-                        <input type="email" name="email" id="email" value="" placeholder="Correo">
-                    </div>
-                    <div class="6u$ 12u$(xsmall)">
-                        <input type="text" name="subject" id="subject" value="" placeholder="Asunto">
-                    </div>
-
-
-                    <div class="12u$">
-                        <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-                    </div>
-
-                    <div class="12u$">
-                        <ul class="actions">
-                            <li><input type="submit" value="Send Message"></li>
-                            <li><input type="reset" value="Reset" class="alt"></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </form>
-        </div>
-
-        <div class="4u 12u(medium)">
-            <h4>Contáctanos y conoce un poco más de las actividades que realizamos y cómo puedes ser parte de
-                este club.
-                ¡Anímate!</h4>
-            <p class="animate_fade_in">
-                <i class="fa fa-map-marker"></i> Km. 30.5 Via Perimetral Campus Gustavo Galindo Velasco
-            </p>
-            <p class="animate_fade_in">
-                <i class="fa fa-envelope"></i> kokoa@espol.edu.ec
-            </p>
-            <p class="animate_fade_in">
-                <i class="fa fa-phone"></i> 042-269-970
-            </p>
-            <!-- <div class="row">
-                <div class="6u$ 12u$(small)">
-                    <h4>Contáctanos y conoce un poco más de las actividades que realizamos y cómo puedes ser parte de
-                        este club.
-                        ¡Anímate!</h4>
-                    <p class="animate_fade_in">
-                        <i class="fa fa-map-marker"></i> Km. 30.5 Via Perimetral Campus Gustavo Galindo Velasco
-                    </p>
-                    <p class="animate_fade_in">
-                        <i class="fa fa-envelope"></i> kokoa@espol.edu.ec
-                    </p>
-                    <p class="animate_fade_in">
-                        <i class="fa fa-phone"></i> 042-269-970
-                    </p>
-                </div>
-            </div> -->
-
-        </div>
-
-        <div class="4u 12u(medium)">
-            <h2>Aqui el mapa de google</h2>
-        </div>
-
-
-    </div>
-
-</div>
-
-
+<!-- ================ contact section end ================= -->
 {% endblock content %}

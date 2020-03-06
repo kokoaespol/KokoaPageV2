@@ -1,48 +1,43 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
-
-<!-- One -->
-<section id="One" class="wrapper style3">
-    <div class="inner">
-        <header class="align-center">
-            <p>Eleifend vitae urna</p>
-            <h2>Miembros</h2>
-        </header>
-    </div>
-</section>
-
-<!-- Two -->
-
-
-<section class="wrapper style2">
-    <div class="inner">
-        <div class="grid-style">
-
-            {% for member in members %}
-                <div>
-                    <div class="box">
-                        <div class="image fit">
-                            <img src="{{ member.image.url }}" alt="">
-                        </div>
-                        <div class="content">
-                            <header class="align-center">
-                                <p>{{ member.major }} - {{ member.join_year }}</p>
-                                <h2>{{ member.name }}</h2>
-                            </header>
-                            {% comment %} <p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet
-                                tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus,
-                                quis volutpat lacus placerat malesuada.</p>
-                            <footer class="align-center">
-                                <a href="#" class="button alt">Learn More</a>
-                            </footer> {% endcomment %}
-                        </div>
-                    </div>
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Miembros</h3>
                 </div>
-            {% endfor %}
-            
+            </div>
         </div>
     </div>
-</section>
+</div>
+<!--/ bradcam_area  -->
 
+<!-- gallery -->
+<div class="gallery_area">
+    <div class="container">
+        <div class="row grid">
+            {% for member in members %}
+            <div class="col-xl-3 col-lg-6 grid-item cat1 col-md-6">
+                <div class="single-gallery mb-20">
+                    <div class="portfolio-img">
+                        <img src="{{ member.image.url }}" alt="">
+                    </div>
+                    <div class="gallery_hover">
+                        <a class="hover_inner">
+                            <h3>{{ member.name }}</h3>
+                            <span>{{ member.major }} - {{ member.join_year }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--/ gallery -->
 {% endblock content %}
