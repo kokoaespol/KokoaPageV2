@@ -81,12 +81,19 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-
-                                            <li><a href="{% url 'home' %}">Inicio</a></li>
-                                            <li><a href="{% url 'projects' %}">Proyectos</a></li>
+                                            {% for key, values in nav.items %}
+                                            <li>
+                                                <a {% if values.active %} class="active" {% endif %}
+                                                    href="{{ values.url }}">
+                                                    {{ values.text }}
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                            {% comment %} <li><a href="{% url 'projects' %}">Proyectos</a></li>
                                             <li><a href="{% url 'members' %}">Miembros</a></li>
                                             <li><a href="{% url 'about' %}">¿Quienes somos?</a></li>
                                             <li><a href="{% url 'contact' %}">Cont&aacute;ctanos</a></li>
+                                            {% endcomment %}
                                         </ul>
                                     </nav>
                                 </div>
@@ -124,18 +131,18 @@
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
+                                        <a href="https://www.facebook.com/kokoaespol/" target="_blank">
+                                            <i class="fa fa-facebook"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <i class="ti-twitter-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/kokoaespol/" target="_blank">
                                             <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/kokoaespol/" target="_blank">
+                                            <i class="fa fa-github"></i>
                                         </a>
                                     </li>
                                 </ul>
